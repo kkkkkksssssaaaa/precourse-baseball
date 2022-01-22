@@ -10,7 +10,7 @@ public class Number {
     public static final Integer END_IDX = 9;
 
     private Number(int num) {
-        if (!isWithInRange(num)) {
+        if (!isWithinRange()) {
             throw NumberException.notWithinRangeNumber(num);
         }
 
@@ -21,16 +21,24 @@ public class Number {
         return new Number(num);
     }
 
-    private boolean isWithInRange(int num) {
-        return isOverThanStart(num) && isUnderThanEnd(num);
+    public boolean equals(Number number) {
+        return this.get() == number.get();
     }
 
-    private boolean isOverThanStart(int num) {
-        return num >= START_IDX;
+    private int get() {
+        return this.num;
     }
 
-    private boolean isUnderThanEnd(int num) {
-        return num <= END_IDX;
+    private boolean isWithinRange() {
+        return isOverThanStart() && isUnderThanEnd();
+    }
+
+    private boolean isOverThanStart() {
+        return this.num >= START_IDX;
+    }
+
+    private boolean isUnderThanEnd() {
+        return this.num <= END_IDX;
     }
 
 }
