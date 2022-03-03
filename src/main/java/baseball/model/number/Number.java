@@ -10,6 +10,8 @@ public class Number {
     public static final Integer END_IDX = 9;
 
     private Number(int num) {
+        this.num = num;
+
         if (!isWithinRange()) {
             throw NumberException.notWithinRangeNumber(num);
         }
