@@ -19,7 +19,7 @@ public class Number {
         this.num = num;
     }
 
-    public static Number set(int num) {
+    public static Number of(int num) {
         return new Number(num);
     }
 
