@@ -27,6 +27,12 @@ public class Number {
         return this.get() == number.get();
     }
 
+    public void ifEqualsThrowDuplicateException(Number number) {
+        if (this.equals(number)) {
+            throw NumberException.duplicateNumber(number);
+        }
+    }
+
     private int get() {
         return this.num;
     }
