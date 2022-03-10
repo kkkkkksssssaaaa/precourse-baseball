@@ -11,9 +11,6 @@ public class NumberException {
                     + "Please check range, over than %d "
                     + "and under than %d";
 
-    private static final String DUPLICATE_NUMBER =
-            "[%d] is duplicated.";
-
     private NumberException(String message, Object... args) {
         this.message = setMessage(message, args);
     }
@@ -21,12 +18,6 @@ public class NumberException {
     public static IllegalArgumentException notWithinRangeNumber(int num) {
         NumberException instance =
                 new NumberException(WITHIN_RANGE_NUMBER_MESSAGE, num, Number.START_IDX, Number.END_IDX);
-        throw new IllegalArgumentException(instance.getMessage());
-    }
-
-    public static IllegalArgumentException duplicateNumber(Number number) {
-        NumberException instance =
-                new NumberException(DUPLICATE_NUMBER, number);
         throw new IllegalArgumentException(instance.getMessage());
     }
 

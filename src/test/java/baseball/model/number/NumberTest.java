@@ -13,17 +13,8 @@ class NumberTest {
     class FailedCase {
 
         @Test
-        void 범위에_포함되지_않는_숫자를_입력하면_IllegalArgumentException을_반환한다() {
+        void 범위에_포함되지_않는_숫자를_입력하면_IllegalArgumentException을_던진다() {
             assertThrows(IllegalArgumentException.class, () -> Number.of(-1));
-        }
-
-        @Test
-        void 같은_값을_가지고_있는_객체를_비교하여_예외를_던질_수_있다() {
-            Number compareLeft = Number.of(5);
-            Number compareRight = Number.of(5);
-
-            assertThrows(IllegalArgumentException.class,
-                    () -> compareLeft.ifEqualsThrowDuplicateException(compareRight));
         }
 
     }
