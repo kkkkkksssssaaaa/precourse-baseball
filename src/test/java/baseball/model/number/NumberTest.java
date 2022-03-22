@@ -39,12 +39,12 @@ class NumberTest {
         }
 
         @Test
-        void 같은_값을_가지면_equalsTrue_를_반환한다() {
+        void 같은_값을_가진다면_동등성을_보장한다() {
             Number compareLeft = Number.of(5);
             Number compareRight = Number.of(5);
 
-            assertTrue(
-                    compareLeft.equals(compareRight));
+            assertEquals(compareLeft.hashCode(), compareRight.hashCode());
+            assertEquals(compareLeft, compareRight);
         }
 
     }
