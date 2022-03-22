@@ -15,22 +15,24 @@ public class Number {
         if (!isWithinRange()) {
             throw NumberException.notWithinRangeNumber(num);
         }
-
-        this.num = num;
     }
 
     public static Number of(int num) {
         return new Number(num);
     }
 
-    public boolean equals(Number number) {
-        return this.get() == number.get();
+    @Override
+    public boolean equals(Object number) {
+        if (!(number instanceof Number)) {
+            return false;
+        }
+
+        return this.get() == ((Number) number).get();
     }
 
-    public void ifEqualsThrowDuplicateException(Number number) {
-        if (this.equals(number)) {
-            throw NumberException.duplicateNumber(number);
-        }
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(this.num);
     }
 
     private int get() {
