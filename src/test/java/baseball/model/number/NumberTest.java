@@ -9,8 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class NumberTest {
 
     @Nested
-    @DisplayName("Failed Case")
-    class FailedCase {
+    @DisplayName("Failed Test")
+    class FailedTest{
 
         @Test
         void 범위에_포함되지_않는_숫자를_입력하면_IllegalArgumentException을_던진다() {
@@ -20,8 +20,8 @@ class NumberTest {
     }
 
     @Nested
-    @DisplayName("Pass Case")
-    class PassCase {
+    @DisplayName("Pass Test")
+    class PassTest{
 
         @Test
         void 최소값인_숫자를_입력하면_예외가_반환되지_않는다() {
