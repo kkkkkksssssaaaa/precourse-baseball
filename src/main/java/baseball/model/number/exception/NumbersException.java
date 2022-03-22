@@ -22,12 +22,6 @@ public class NumbersException {
         throw new IndexOutOfBoundsException(instance.getMessage());
     }
 
-    public static IllegalArgumentException duplicateNumber() {
-        NumbersException instance =
-                new NumbersException(DUPLICATE_NUMBER);
-        throw new IllegalArgumentException(instance.getMessage());
-    }
-
     private String getMessage() {
         return this.message;
     }
