@@ -18,7 +18,7 @@ public class NumberException {
     public static IllegalArgumentException notWithinRangeNumber(int num) {
         NumberException instance =
                 new NumberException(WITHIN_RANGE_NUMBER_MESSAGE, num, Number.START_IDX, Number.END_IDX);
-        throw new IllegalArgumentException(instance.getMessage());
+        return new IllegalArgumentException(instance.getMessage());
     }
 
     private String getMessage() {
