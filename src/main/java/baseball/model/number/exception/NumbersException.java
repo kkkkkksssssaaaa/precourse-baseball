@@ -1,25 +1,20 @@
 package baseball.model.number.exception;
 
-import baseball.model.number.Number;
-
 public class NumbersException {
 
     private final String message;
 
-    private static final String INDEX_OUTBOUND_MESSAGE =
-            "This collection cannot be more than %d in size.";
-
-    private static final String DUPLICATE_NUMBER =
-            "This collection contains duplicate number.";
+    private static final String WRONG_COLLECTION_SIZE =
+            "This collection size is must be %d.";
 
     private NumbersException(String message, Object... args) {
         this.message = setMessage(message, args);
     }
 
-    public static IndexOutOfBoundsException indexOutOfBoundsException(int size) {
+    public static IllegalArgumentException wrongCollectionSize(int size) {
         NumbersException instance =
-                new NumbersException(INDEX_OUTBOUND_MESSAGE, size);
-        throw new IndexOutOfBoundsException(instance.getMessage());
+                new NumbersException(WRONG_COLLECTION_SIZE, size);
+        return new IllegalArgumentException(instance.getMessage());
     }
 
     private String getMessage() {
